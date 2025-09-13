@@ -1,6 +1,7 @@
 // Liste over oprettede formularer (hurtig visning)
 import React from 'react';
-import { FlatList, SafeAreaView, Text, View } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { GlobalStyle as g } from '../styles/styles';
 import TransportCard from '../components/TransportCard';
 import { useTransport } from '../store/TransportContext';
@@ -21,6 +22,7 @@ export default function FormsScreen({ navigation }){
       <FlatList
         data={transports}
         keyExtractor={(item, idx) => item.id?.toString() || String(idx)}
+        contentContainerStyle={{ paddingBottom: 100 }}
         renderItem={({ item }) => (
           <TransportCard
             t={item}

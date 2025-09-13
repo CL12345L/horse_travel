@@ -12,28 +12,35 @@ En enkel mobilapp til stutterier, rideklubber og transportfirmaer. Appen strøml
 ## Demo
 - Indsæt videolink: https://YOUR-VIDEO-LINK
 
-## Krav (opfyldt)
-- Minimum 3 screens/views: Overblik, Ny tur, Historik (+ Formularer, Detalje, Login)
-- Minimum 2 knapper (én navigerer): Knapper på Overblik/Ny tur navigerer og gemmer
-- Minimum 1 liste: Historik og Formularer (FlatList)
-- Styling separat: Global style i `src/styles/styles.js`
-- README: Denne fil (med kørevejledning)
+## Eksamenskrav — let overblik
+- Minimum 3 screens: Overblik, Ny tur, Historik
+  - Filer: `src/screens/OverviewScreen.js`, `src/screens/PlanScreen.js`, `src/screens/TransportsScreen.js`
+- Minimum 3 views: De tre skærme ovenfor er selvstændige views. Der er desuden Formularer, Detalje og Login
+  - Ekstra filer: `src/screens/FormsScreen.js`, `src/screens/TransportDetailScreen.js`, `src/screens/LoginScreen.js`
+- Minimum 2 knapper (én navigerer):
+  - Navigationsknapper på Overblik: “Planlæg ny tur”, “Se historik”, “Formularer” (`src/screens/OverviewScreen.js`)
+  - “Vis dokument” på kort åbner detalje (`src/components/TransportCard.js`)
+  - “Gem” i Ny tur gemmer data (`src/screens/PlanScreen.js`)
+- Minimum 1 liste: Historik og Formularer viser transporter med `FlatList`
+  - Filer: `src/screens/TransportsScreen.js`, `src/screens/FormsScreen.js`
+- Styling i separat fil: Al styling ligger i `src/styles/styles.js` og importeres som `g`
+- README med demovideo: Afsnittet “Demo” (indsæt jeres link)
 
 ## Hurtig start
-Forudsætninger
+Du skal bruge
 - Node.js LTS
-- Expo Go på mobilen (eller iOS/Android emulator)
+- Expo Go på mobilen (eller iOS/Android‑emulator)
 
 Kør projektet
 ```bash
 cd horse_travel
 npm install
-npm start   # vælg i, a eller web – eller scan QR i Expo Go
+npm start   # tryk i (iOS), a (Android) eller scan QR i Expo Go
 ```
 Tips
-- På netværk med begrænsninger (eduroam m.fl.): `npx expo start --tunnel`
-- Ryd cache hvis noget driller: `npx expo start -c`
-- Åbn direkte simulator: tryk `i` (iOS) eller `a` (Android) i terminalen
+- Netværk driller (fx eduroam): `npx expo start --tunnel`
+- Ryd cache: `npx expo start -c`
+- Genveje i bundleren: `i` (iOS), `a` (Android), `w` (Web)
 
 ### Kør med `npx expo start`
 Du kan altid starte bundleren direkte med Expo CLI uden npm‑script:

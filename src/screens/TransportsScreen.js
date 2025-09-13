@@ -1,7 +1,8 @@
 
 // Historik over transporter med knapper (se/slet)
 import React from 'react';
-import { Alert, FlatList, SafeAreaView, Text, View } from 'react-native';
+import { Alert, FlatList, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { GlobalStyle as g } from '../styles/styles';
 import TransportCard from '../components/TransportCard';
 import { useTransport } from '../store/TransportContext';
@@ -27,6 +28,7 @@ export default function TransportsScreen({ navigation }){
       <FlatList
         data={transports}
         keyExtractor={(item, idx) => item.id?.toString() || String(idx)}
+        contentContainerStyle={{ paddingBottom: 100 }}
         renderItem={({ item }) => (
           <TransportCard t={item} onOpen={() => navigation.navigate('TransportDetail', { item })} onDelete={() => handleDelete(item)} />
         )}

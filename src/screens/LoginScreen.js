@@ -1,6 +1,7 @@
 // Simpelt login/opret-konto (mock) gemt lokalt
 import React, { useState } from 'react';
 import { Alert, KeyboardAvoidingView, Platform, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import PrimaryButton from '../components/PrimaryButton';
 import { GlobalStyle as g } from '../styles/styles';
 import { useAuth } from '../store/AuthContext';
@@ -37,7 +38,8 @@ export default function LoginScreen(){
   };
 
   return (
-    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={[g.screen, g.centered] }>
+    <SafeAreaView style={g.screen}>
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={[g.flex1, g.centered] }>
       <View style={[g.card, g.pv24] }>
         <Text style={g.title}>{mode === 'login' ? 'Log ind' : 'Opret konto'}</Text>
         <Text style={g.subtitle}>Brug en valgfri email og adgangskode</Text>
@@ -67,6 +69,7 @@ export default function LoginScreen(){
           </Text>
         </TouchableOpacity>
       </View>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 }

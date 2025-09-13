@@ -1,6 +1,7 @@
 // Fuld, skrivebeskyttet dokument-visning klar til myndigheder
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { GlobalStyle as g } from '../styles/styles';
 
 export default function TransportDetailScreen({ route }){
@@ -15,7 +16,8 @@ export default function TransportDetailScreen({ route }){
   const ownerPhone = item?.ownerPhone || '—';
 
   return (
-    <ScrollView style={g.screen}>
+    <SafeAreaView style={g.screen}>
+      <ScrollView contentContainerStyle={[g.screenContent, { paddingBottom: 80 }]}>
       <View style={g.card}>
         <Text style={g.title}>Transportdokument</Text>
         <Text style={g.subtitle}>Skal udfyldes og medbringes ved hver transport af dyr</Text>
@@ -45,6 +47,7 @@ export default function TransportDetailScreen({ route }){
 
         <Text style={[g.value, g.mt8]}>Skal på anmodning forevises for kompetent myndighed</Text>
       </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }

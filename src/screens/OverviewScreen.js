@@ -1,6 +1,6 @@
 // Overblik (forside efter login): næste tur og hurtige handlinger
 import React, { useMemo } from 'react';
-import { FlatList, Text, View, Image } from 'react-native';
+import { Text, View, Image, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AppHeader from '../components/AppHeader';
 import PrimaryButton from '../components/PrimaryButton';
@@ -16,6 +16,7 @@ export default function OverviewScreen({ navigation }){
 
   return (
     <SafeAreaView style={g.screen}>
+      <ScrollView contentContainerStyle={[g.screenContent, { paddingBottom: 100 }] }>
       <View style={g.brandHero}>
         <Image source={require('../../assets/logo.png')} style={g.logoXL} />
         <Text style={g.brandTitleLight}>Horse Travel</Text>
@@ -45,12 +46,11 @@ export default function OverviewScreen({ navigation }){
 
       <View style={g.section}>
         <Text style={g.sectionTitle}>Seneste</Text>
-        <FlatList
-          data={(transports || []).slice(0,3)}
-          keyExtractor={(item, idx) => item.id?.toString() || String(idx)}
-          renderItem={({ item }) => <TransportCard t={item} />}
-        />
+        { (transports || []).slice(0,3).map((item, idx) => (
+          <TransportCard key={item.id?.toString() || String(idx)} t={item} />
+        )) }
       </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }

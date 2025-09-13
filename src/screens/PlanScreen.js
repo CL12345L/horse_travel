@@ -1,7 +1,8 @@
 
 // Transportdokument ("Ny tur"): indsamler alle nødvendige felter
 import React, { useEffect, useState } from 'react';
-import { ScrollView, Text, TextInput, View, Alert } from 'react-native';
+import { ScrollView, Text, TextInput, View, Alert, KeyboardAvoidingView, Platform } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import PrimaryButton from '../components/PrimaryButton';
 import { GlobalStyle as g } from '../styles/styles';
 import { useTransport } from '../store/TransportContext';
@@ -49,8 +50,10 @@ export default function PlanScreen({ navigation }){
   }, [navigation, clearDraft, initialDraft]);
 
   return (
-    <ScrollView style={g.screen} contentContainerStyle={g.screenContent} keyboardShouldPersistTaps="handled">
-      <View style={g.card}>
+    <SafeAreaView style={g.screen}>
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={g.flex1}>
+      <ScrollView contentContainerStyle={[g.screenContent, { paddingBottom: 140 }]} keyboardShouldPersistTaps="handled">
+        <View style={g.card}>
         <Text style={g.title}>Transportdokument</Text>
         <Text style={g.subtitle}>Skal udfyldes og medbringes ved hver transport af dyr</Text>
 
@@ -81,7 +84,9 @@ export default function PlanScreen({ navigation }){
 
         <Text style={[g.subtitle, g.mt4]}>Skal på anmodning forevises for kompetent myndighed</Text>
         <PrimaryButton title="Gem" onPress={onSave} />
-      </View>
-    </ScrollView>
+        </View>
+      </ScrollView>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 }
