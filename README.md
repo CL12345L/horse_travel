@@ -33,7 +33,18 @@ npm start   # vælg i, a eller web – eller scan QR i Expo Go
 Tips
 - På netværk med begrænsninger (eduroam m.fl.): `npx expo start --tunnel`
 - Ryd cache hvis noget driller: `npx expo start -c`
- - Åbn direkte simulator: tryk `i` (iOS) eller `a` (Android) i terminalen
+- Åbn direkte simulator: tryk `i` (iOS) eller `a` (Android) i terminalen
+
+### Kør med `npx expo start`
+Du kan altid starte bundleren direkte med Expo CLI uden npm‑script:
+
+```bash
+cd horse_travel
+npx expo start          # standard LAN
+npx expo start -c       # rens Metro/asset‑cache
+npx expo start --tunnel # brug tunnel hvis LAN ikke virker
+```
+Når bundleren kører, brug tastaturgenveje i terminalen: `i` (iOS), `a` (Android), `w` (Web).
 
 Login / Opret bruger
 - Brug enhver email + adgangskode for at oprette.
@@ -156,7 +167,7 @@ Bemærk: `expo install` vælger typisk de korrekte kompatible versioner for din 
 - Geninstaller moduler: `rm -rf node_modules package-lock.json && npm install`
 - Skift bundler‑tilstand hvis netværk driller: `npx expo start --tunnel`
 
-## Videre arbejde (valgfrit)
+## Videre arbejde 
 - Dato/tid‑vælgere (native pickers) på Ny tur
 - Søgning/filtrering i Historik/Formularer
 - Del/eksport af dokument (billede/PDF)
