@@ -4,7 +4,7 @@ En enkel app til at planlægge og fremvise hestetransporter. Udfyld et transport
 
 
 ## opgave krav (opfyldt) — hvor i koden
-- Minimum 3 screens (se 02_Navigation):
+- Minimum 3 screens:
   - `horse_travel/src/screens/OverviewScreen.js`
   - `horse_travel/src/screens/PlanScreen.js`
   - `horse_travel/src/screens/TransportsScreen.js`
@@ -14,21 +14,18 @@ En enkel app til at planlægge og fremvise hestetransporter. Udfyld et transport
   - De tre skærme ovenfor er selvstændige views
   - Ekstra views: `horse_travel/src/screens/FormsScreen.js`, `horse_travel/src/screens/TransportDetailScreen.js`, `horse_travel/src/screens/LoginScreen.js`
 
-- Minimum 2 knapper (min. én navigerer) (se 01/02):
+- Minimum 2 knapper (min. én navigerer):
   - Naviger fra Overblik: `horse_travel/src/screens/OverviewScreen.js` (knapperne “Planlæg ny tur”, “Se historik”, “Formularer” kalder `navigation.navigate(...)`)
   - Åbn detalje fra liste: `horse_travel/src/screens/TransportsScreen.js` + `horse_travel/src/components/TransportCard.js` ("Vis dokument" åbner `TransportDetail`)
   - Funktionsknap med handling: `horse_travel/src/screens/PlanScreen.js` ("Gem" validerer og opretter transport)
 
-- Minimum 1 liste (se 03_Lister):
+- Minimum 1 liste :
   - `horse_travel/src/screens/TransportsScreen.js` (FlatList over transporter)
   - `horse_travel/src/screens/FormsScreen.js` (FlatList over dokumenter)
 
-- Styling i separat fil (se 04_Styling):
+- Styling i separat fil:
   - `horse_travel/src/styles/styles.js` (GlobalStyle)
   - Brugt i skærme/komponenter: fx `horse_travel/src/screens/OverviewScreen.js`, `horse_travel/src/components/PrimaryButton.js`
-
-- README med demovideo:
-  - `horse_travel/README.md` (afsnittet “Demovideo” – indsæt jeres link)
 
 ## Kom hurtigt i gang
 - Krav: Node.js LTS og Expo Go på din telefon (eller iOS/Android‑emulator).
@@ -109,9 +106,6 @@ horse_travel-main/
 - Bundleren opfører sig mærkeligt: stop den og kør `npx expo start -c`.
 - Hvor kører jeg kommandoer fra? Inde i mappen `horse_travel/`.
 
-
-## Videre arbejde
-- Native dato/tid‑vælgere, søgning i historik og eksport/print af dokument.
 
 ---
 Horse Travel
