@@ -12,6 +12,7 @@ import { useAuth } from '../store/AuthContext';
 export default function OverviewScreen({ navigation }){
   const { transports } = useTransport();
   const { signOut, user } = useAuth();
+  // Finder den næste planlagte tur (øverste i listen)
   const next = useMemo(() => (transports && transports.length > 0 ? transports[0] : null), [transports]);
 
   return (
@@ -29,6 +30,7 @@ export default function OverviewScreen({ navigation }){
 
       <View style={g.hero}>
         <Text style={g.title}>Overblik</Text>
+        {/* Viser enten næste tur eller en tom-tilstandstekst */}
         {next ? (
           <View>
             <Text style={g.brandTitle}>{(next.from || next.origin) || '—'} ➜ {(next.to || next.destination) || '—'}</Text>

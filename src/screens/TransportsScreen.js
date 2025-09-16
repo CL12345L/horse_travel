@@ -10,6 +10,7 @@ import { useTransport } from '../store/TransportContext';
 export default function TransportsScreen({ navigation }){
   const { transports, removeTransport } = useTransport();
 
+  // Viser sikkerheds-prompt før en transport slettes
   const handleDelete = (item) => {
     Alert.alert('Slet transport', 'Er du sikker på at du vil slette denne transport?', [
       { text: 'Annuller', style: 'cancel' },
@@ -29,6 +30,7 @@ export default function TransportsScreen({ navigation }){
         data={transports}
         keyExtractor={(item, idx) => item.id?.toString() || String(idx)}
         contentContainerStyle={{ paddingBottom: 100 }}
+        // Rækker gengives via TransportCard med knapper til visning/sletning
         renderItem={({ item }) => (
           <TransportCard t={item} onOpen={() => navigation.navigate('TransportDetail', { item })} onDelete={() => handleDelete(item)} />
         )}

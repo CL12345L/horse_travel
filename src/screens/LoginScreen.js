@@ -63,6 +63,7 @@ export default function LoginScreen(){
         ) : (
           <PrimaryButton title={loading ? 'Opretter…' : 'Opret konto'} onPress={onSignup} />
         )}
+        {/* Skifter visning så brugeren kan hoppe mellem login/opret konto */}
         <TouchableOpacity onPress={() => setMode(mode === 'login' ? 'signup' : 'login')} accessibilityRole="button">
           <Text style={g.link}>
             {mode === 'login' ? 'Har du ikke en konto? Opret konto' : 'Har du allerede en konto? Log ind'}

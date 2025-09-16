@@ -8,6 +8,7 @@ import { useTransport } from '../store/TransportContext';
 
 export default function FormsScreen({ navigation }){
   const { transports, removeTransport } = useTransport();
+  // Bruges til at vise tom-tilstand hvis der ingen transporter er
   const hasItems = transports && transports.length > 0;
 
   return (
@@ -23,6 +24,7 @@ export default function FormsScreen({ navigation }){
         data={transports}
         keyExtractor={(item, idx) => item.id?.toString() || String(idx)}
         contentContainerStyle={{ paddingBottom: 100 }}
+        // Giver hurtig adgang til udfyldte dokumenter
         renderItem={({ item }) => (
           <TransportCard
             t={item}

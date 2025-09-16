@@ -8,6 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null); // { email }
   const [ready, setReady] = useState(false);
 
+  // Ved opstart: hent evt. tidligere login fra AsyncStorage
   useEffect(() => {
     (async () => {
       try {

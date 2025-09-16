@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { GlobalStyle as g } from '../styles/styles';
 
 export default function TransportDetailScreen({ route }){
+  // Trækker transport-data ud fra navigationens parametre
   const { item } = route.params || {};
   const from = item?.from || item?.origin || '—';
   const to = item?.to || item?.destination || '—';

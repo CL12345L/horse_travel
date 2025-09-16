@@ -59,5 +59,5 @@ export const GlobalStyle = StyleSheet.create({
   ,statText: { color: colors.text, fontWeight: '700' }
 });
 
-// Backwards compatibility alias
+// 'g' er bare et kort navn for GlobalStyle, så gammel kode stadig virker
 export const g = GlobalStyle;

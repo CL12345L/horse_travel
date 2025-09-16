@@ -24,6 +24,7 @@ function LoadingScreen() { return null; }
 
 // Faner synlige efter login
 function MainTabs(){
+  // Opsætter bund-navigationen med faner og ikoner
   return (
     <Tab.Navigator
       initialRouteName="Overblik"
@@ -37,6 +38,7 @@ function MainTabs(){
           paddingTop: 6,
         },
         tabBarIcon: ({ color, size, focused }) => {
+          // Oversætter rutenavn til korrekt MaterialCommunityIcons-ikon
           let icon = 'circle-outline';
           if (route.name === 'Overblik') icon = focused ? 'horse-variant' : 'horse-variant';
           if (route.name === 'Ny tur') icon = focused ? 'car-side' : 'car-side';
@@ -60,6 +62,7 @@ function RootNavigator(){
   return (
     <Stack.Navigator>
       {!ready ? (
+        // Viser en tom skærm mens login-status indlæses fra AsyncStorage
         <Stack.Screen name="Loading" component={LoadingScreen} options={{ headerShown:false }} />
       ) : user ? (
         <>
