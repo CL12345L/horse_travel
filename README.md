@@ -46,7 +46,7 @@ Kør altid kommandoer inde i `horse_travel/`.
 
 1) Installer og start bundleren
 ```bash
-cd horse_travel
+cd horse_travel_main
 npx expo start          # eller: npx expo start --tunnel
 ```
 
