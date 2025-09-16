@@ -2,9 +2,6 @@
 
 En enkel app til at planlægge og fremvise hestetransporter. Udfyld et transportdokument, gem det lokalt og vis en læsbar version til myndigheder ved kontrol.
 
-## Demovideo
-- Link: https://DIN-VIDEO-LINK  
-  (Udskift med jeres rigtige link til en kort demo)
 
 ## opgave krav (opfyldt) — hvor i koden
 - Minimum 3 screens (se 02_Navigation):
@@ -37,7 +34,7 @@ En enkel app til at planlægge og fremvise hestetransporter. Udfyld et transport
 - Krav: Node.js LTS og Expo Go på din telefon (eller iOS/Android‑emulator).
 - Start projektet:
   ```bash
-  cd horse_travel
+  cd horse_travel_main kun hvis du ikke allerede er i mappen, ellers bare direkte npm install
   npm install
   npm start  # tryk i (iOS), a (Android) eller scan QR i Expo Go
   ```
