@@ -34,7 +34,7 @@ En enkel app til at planlægge og fremvise hestetransporter. Udfyld et transport
 - Krav: Node.js LTS og Expo Go på din telefon (eller iOS/Android‑emulator).
 - Start projektet fra roden af repoet:
   ```bash
-  cd horse_travel_main        # gå ind i app-mappen, medmindre du allerede er i mappen så spring over. 
+  cd horse_travel-main        # gå ind i app-mappen, medmindre du allerede er i mappen så spring over. 
   npm install            # hent afhængigheder
   npx expo start         # start Metro bundleren (tryk i/a/w eller scan QR)
   ```
@@ -46,7 +46,7 @@ Kør altid kommandoer inde i `horse_travel/`.
 
 1) Installer og start bundleren
 ```bash
-cd horse_travel_main
+cd horse_travel-main #medmindre du allerede er i mappen, spring dette over. 
 npx expo start          # eller: npx expo start --tunnel
 ```
 
@@ -93,7 +93,7 @@ npx expo start --web          # kun web
 
 ## Mappestruktur (kort)
 ```
-horse_travel_main/
+horse_travel-main/
   App.js                # Navigation og skærme
   app.json              # App‑ikon, splash m.m.
   assets/               # Billeder (logo, ikoner)
