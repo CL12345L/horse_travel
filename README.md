@@ -93,7 +93,7 @@ npx expo start --web          # kun web
 
 ## Mappestruktur (kort)
 ```
-horse_travel/
+horse_travel_main/
   App.js                # Navigation og skærme
   app.json              # App‑ikon, splash m.m.
   assets/               # Billeder (logo, ikoner)
