@@ -2,6 +2,8 @@
 
 En enkel app til at planlægge og fremvise hestetransporter. Udfyld et transportdokument, gem det lokalt og vis en læsbar version til myndigheder ved kontrol.
 
+## DEMOVIDEO LINK
+https://www.youtube.com/watch?v=e-JjAMaZTG4
 
 ## opgave krav (opfyldt) — hvor i koden
 - Minimum 3 screens:
